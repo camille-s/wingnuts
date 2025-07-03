@@ -1,0 +1,66 @@
+{
+  "services": [
+    {
+      "name": "wallabag",
+      "image": "wallabag/wallabag",
+      "environment": {
+        "SYMFONY__ENV__DATABASE_DRIVER": "pdo_sqlite",
+        "SYMFONY__ENV__DATABASE_HOST": "db",
+        "SYMFONY__ENV__DATABASE_PORT": "3306",
+        "SYMFONY__ENV__DATABASE_USER": "wallabag",
+        "SYMFONY__ENV__DATABASE_PASSWORD": "s6HAVpP2y^zPxW@7",
+        "SYMFONY__ENV__DATABASE_CHARSET": "utf8mb4",
+        "SYMFONY__ENV__DATABASE_TABLE_PREFIX": "\"wallabag_\"",
+        "SYMFONY__ENV__MAILER_DSN": "smtp://127.0.0.1",
+        "SYMFONY__ENV__FROM_EMAIL": "fishpepper@duck.com",
+        "SYMFONY__ENV__DOMAIN_NAME": "https://wallabag.mothgirl.club",
+        "SYMFONY__ENV__SERVER_NAME": "\"wallabag\""
+      },
+      "internalPort": 80,
+      "volumes": [
+        {
+          "hostPath": "/opt/wallabag/images",
+          "containerPath": "/var/www/wallabag/web/assets/images",
+          "readOnly": false,
+          "shared": false,
+          "private": false
+        }
+      ],
+      "healthCheck": {
+        "test": "CMD wget --no-verbose --tries=1 --spider http://localhost/api/info",
+        "interval": "1m",
+        "timeout": "3s"
+      },
+      "dependsOn": {
+        "db": {
+          "condition": "service_started"
+        },
+        "redis": {
+          "condition": "service_started"
+        }
+      }
+    },
+    {
+      "name": "db",
+      "image": "alpine/sqlite:3.49.2",
+      "volumes": [
+        {
+          "hostPath": "/opt/wallabag/data",
+          "containerPath": "/var/lib/sqlite",
+          "readOnly": false,
+          "shared": false,
+          "private": false
+        }
+      ]
+    },
+    {
+      "name": "redis",
+      "image": "redis:alpine",
+      "healthCheck": {
+        "test": "CMD redis-cli ping",
+        "interval": "20s",
+        "timeout": "3s"
+      }
+    }
+  ]
+}

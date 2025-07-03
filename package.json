@@ -1,6 +1,6 @@
 {
-  "name": "example-appstore",
-  "version": "1.0.0",
+  "name": "wingnuts-app-store",
+  "version": "0.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
@@ -8,7 +8,7 @@
     "test": "bun test"
   },
   "keywords": [],
-  "author": "",
+  "author": "camille",
   "license": "ISC",
   "devDependencies": {
     "@types/bun": "latest",

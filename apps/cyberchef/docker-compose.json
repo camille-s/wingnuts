@@ -1,8 +1,8 @@
 {
   "services": [
     {
-      "name": "whoami",
-      "image": "traefik/whoami:v1.11.0",
+      "name": "cyberchef",
+      "image": "ghcr.io/gchq/cyberchef:10.19.4",
       "isMain": true,
       "internalPort": "80"
     }

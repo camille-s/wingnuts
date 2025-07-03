@@ -1,0 +1,16 @@
+{
+  "name": "Wallabag",
+  "id": "wallabag",
+  "available": true,
+  "short_desc": "Save and classify articles. Read them later. Freely.",
+  "author": "wallabag",
+  "categories": ["utilities"],
+  "description": "Wallabag, formerly Poche, is a web application allowing you to save articles to read them later with improved readability.",
+  "tipi_version": 1,
+  "version": "2.6.13",
+  "source": "https://github.com/wallabag/wallabag",
+  "exposable": true,
+  "supported_architectures": ["arm64", "amd64"],
+  "dynamic_config": true,
+  "form_fields": []
+}
