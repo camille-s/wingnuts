@@ -12,5 +12,6 @@
   "exposable": true,
   "supported_architectures": ["arm64", "amd64"],
   "dynamic_config": true,
-  "form_fields": []
+  "form_fields": [],
+  "port": 8101
 }
