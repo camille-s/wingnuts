@@ -1,0 +1,42 @@
+{
+  "services": [
+    {
+      "name": "server",
+      "image": "padloc/server",
+      "environment": {
+        "PL_DATA_BACKEND": "leveldb",
+        "PL_DATA_LEVELDB_DIR": "/data",
+        "PL_DATA_ATTACHMENTS_BACKEND": "fs",
+        "PL_DATA_ATTACHMENTS_DIR": "/attachments",
+        "PL_SERVER_CLIENT_URL": "http://localhost:${APP_PORT}",
+        "PL_EMAIL_BACKEND": "console"
+      },
+      "internalPort": 3000,
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/attachments",
+          "containerPath": "/attachments",
+          "readOnly": false,
+          "shared": false,
+          "private": false
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data",
+          "containerPath": "/data",
+          "readOnly": false,
+          "shared": false,
+          "private": false
+        }
+      ]
+    },
+    {
+      "name": "pwa",
+      "image": "padloc/pwa",
+      "environment": {
+        "PL_SERVER_URL": "http://localhost:3000",
+        "PL_PWA_URL": "http://localhost:${APP_PORT}"
+      },
+      "internalPort": 8080
+    }
+  ]
+}
