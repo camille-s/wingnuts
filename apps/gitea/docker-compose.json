@@ -1,0 +1,45 @@
+{
+  "services": [
+    {
+      "name": "gitea",
+      "image": "docker.gitea.com/gitea:1.24.2",
+      "environment": {
+        "USER_UID": "1000",
+        "USER_GID": "1000"
+      },
+      "internalPort": 3000,
+      "addPorts": [
+        {
+          "containerPort": 22,
+          "hostPort": 223,
+          "tcp": true,
+          "udp": false
+        }
+      ],
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data",
+          "containerPath": "/data",
+          "readOnly": false,
+          "shared": false,
+          "private": false
+        },
+        {
+          "hostPath": "/etc/timezone",
+          "containerPath": "/etc/timezone",
+          "readOnly": true,
+          "shared": false,
+          "private": false
+        },
+        {
+          "hostPath": "/etc/localtime",
+          "containerPath": "/etc/localtime",
+          "readOnly": true,
+          "shared": false,
+          "private": false
+        }
+      ],
+      "isMain": true
+    }
+  ]
+}
