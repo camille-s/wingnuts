@@ -1,0 +1,19 @@
+{
+  "name": "Padloc",
+  "id": "padloc",
+  "available": true,
+  "short_desc": "A modern, open source password manager for individuals and teams. ",
+  "author": "padloc",
+  "port": 8389,
+  "categories": ["utilities"],
+  "description": "Simple, secure password and data management for individuals and teams.",
+  "tipi_version": 1,
+  "version": "v4.3.0",
+  "source": "https://github.com/padloc/padloc",
+  "exposable": true,
+  "supported_architectures": ["arm64", "amd64"],
+  "created_at": 1745082405284,
+  "updated_at": 1745674974072,
+  "dynamic_config": true,
+  "form_fields": []
+}
