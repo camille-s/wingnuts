@@ -1,0 +1,32 @@
+{
+  "services": [
+    {
+      "name": "keepassxc",
+      "image": "lscr.io/linuxserver/keepassxc:latest",
+      "environment": {
+        "PUID": "1000",
+        "PGID": "1000",
+        "TZ": "Etc/UTC"
+      },
+      "internalPort": 3000,
+      "addPorts": [
+        {
+          "containerPort": 3001,
+          "hostPort": 3001,
+          "tcp": true,
+          "udp": false
+        }
+      ],
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/config",
+          "containerPath": "/config",
+          "readOnly": false,
+          "shared": false,
+          "private": false
+        }
+      ],
+      "securityOpt": ["seccomp:unconfined"]
+    }
+  ]
+}
