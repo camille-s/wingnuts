@@ -1,0 +1,19 @@
+{
+  "name": "Calibre",
+  "id": "calibre",
+  "available": true,
+  "short_desc": "E-book library manager that can view, convert, and catalog e-books in most of the major e-book formats and provides a built-in Web server for remote clients.",
+  "author": "Kovid Goyal",
+  "port": 8387,
+  "categories": ["books"],
+  "description": "E-book library manager that can view, convert, and catalog e-books in most of the major e-book formats and provides a built-in Web server for remote clients.",
+  "tipi_version": 1,
+  "version": "v8.5.0",
+  "source": "https://github.com/kovidgoyal/calibre",
+  "exposable": true,
+  "supported_architectures": ["arm64", "amd64"],
+  "created_at": 1745082405284,
+  "updated_at": 1745674974072,
+  "dynamic_config": true,
+  "form_fields": []
+}
