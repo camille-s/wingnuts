@@ -1,0 +1,19 @@
+{
+  "name": "KeePassXC",
+  "id": "keepassxc",
+  "available": true,
+  "short_desc": "KeePassXC is a modern, secure, and open-source password manager that stores and manages your most sensitive information.",
+  "author": "keepassxreboot",
+  "port": 3000,
+  "categories": ["utilities"],
+  "description": "KeePassXC is a cross-platform community-driven port of the Windows application “Keepass Password Safe”. ",
+  "tipi_version": 1,
+  "version": "v2.7.10",
+  "source": "https://github.com/keepassxreboot/keepassxc",
+  "exposable": true,
+  "supported_architectures": ["arm64", "amd64"],
+  "created_at": 1745082405284,
+  "updated_at": 1745674974072,
+  "dynamic_config": true,
+  "form_fields": []
+}

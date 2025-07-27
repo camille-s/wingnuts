@@ -1,0 +1,34 @@
+{
+  "services": [
+    {
+      "name": "calibre",
+      "image": "lscr.io/linuxserver/calibre:latest",
+      "environment": {
+        "PUID": "1000",
+        "PGID": "1000",
+        "TZ": "${TZ}"
+      },
+      "internalPort": 8080,
+      "addPorts": [
+        {
+          "containerPort": 8181,
+          "hostPort": 8181,
+          "tcp": true,
+          "udp": false
+        }
+      ],
+      "volumes": [
+        {
+          "hostPath": "${EXTERNAL_DIR}/calibre/config",
+          "containerPath": "/config",
+          "readOnly": false,
+          "shared": false,
+          "private": false
+        }
+      ],
+      "securityOpt": [
+        "seccomp:unconfined"
+      ]
+    }
+  ]
+}
