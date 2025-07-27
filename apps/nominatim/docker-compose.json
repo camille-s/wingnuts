@@ -29,7 +29,7 @@
             "image": "ghcr.io/camille-s/nominatim-ui:0.1.0",
             "internalPort": 80,
             "dependsOn": {
-                "server": {
+                "nominatim": {
                     "condition": "service_started"
                 }
             }

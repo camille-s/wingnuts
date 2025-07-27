@@ -24,7 +24,7 @@ services:
     container_name: nominatim-ui
     image: ghcr.io/camille-s/nominatim-ui:0.1.0
     depends_on:
-      - server
+      - nominatim
     restart: unless-stopped
     ports:
       - ${APP_PORT}:80
