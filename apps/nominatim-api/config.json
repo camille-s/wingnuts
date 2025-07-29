@@ -1,10 +1,10 @@
 {
-    "name": "Nominatim",
-    "id": "nominatim",
+    "name": "Nominatim server",
+    "id": "nominatim-api",
     "available": true,
     "short_desc": "Locally-hosted geocoding server",
     "author": "",
-    "port": 8089,
+    "port": 8080,
     "categories": ["data"],
     "description": "Nominatim uses OpenStreetMap data to find locations on Earth by name and address (geocoding). It can also do the reverse, find an address for any location on the planet. This app _does not_ include a debugging UI.",
     "tipi_version": 1,
