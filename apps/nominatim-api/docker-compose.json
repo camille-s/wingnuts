@@ -30,24 +30,6 @@
                     "tcp": true
                 }
             ]
-        },
-        {
-            "name": "nominatim-ui",
-            "image": "ghcr.io/camille-s/nominatim-ui:0.1.0",
-            "internalPort": 80,
-            "dependsOn": {
-                "nominatim": {
-                    "condition": "service_started"
-                }
-            },
-            "isMain": true,
-            "addPorts": [
-                {
-                    "containerPort": 80,
-                    "hostPort": 8089,
-                    "tcp": true
-                }
-            ]
         }
     ]
 }
