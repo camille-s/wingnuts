@@ -1,7 +1,7 @@
 {
     "services": [
         {
-            "name": "nominatim",
+            "name": "nominatim-api",
             "image": "mediagis/nominatim:5.1",
             "environment": {
                 "PBF_URL": "${PBF_URL}",
@@ -22,14 +22,8 @@
                     "private": false
                 }
             ],
-            "shmSize": "1gb",
-            "addPorts": [
-                {
-                    "containerPort": 8080,
-                    "hostPort": 8080,
-                    "tcp": true
-                }
-            ]
+            "shmSize": "1gb"
+            
         }
     ]
 }
