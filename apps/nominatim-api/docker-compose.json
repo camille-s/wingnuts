@@ -22,8 +22,14 @@
                     "private": false
                 }
             ],
-            "shmSize": "1gb"
-            
+            "shmSize": "1gb",
+            "addPorts": [
+                {
+                    "containerPort": 8080,
+                    "hostPort": "${APP_PORT}",
+                    "tcp": true
+                }
+            ]
         }
     ]
 }
