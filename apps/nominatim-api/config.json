@@ -3,7 +3,7 @@
     "id": "nominatim-api",
     "available": true,
     "short_desc": "Locally-hosted geocoding server",
-    "author": "",
+    "author": "mediagis",
     "port": 8080,
     "categories": ["data"],
     "description": "Nominatim uses OpenStreetMap data to find locations on Earth by name and address (geocoding). It can also do the reverse, find an address for any location on the planet. This app _does not_ include a debugging UI.",
@@ -15,14 +15,22 @@
     "created_at": 1753580424475,
     "updated_at": 1753580424475,
     "dynamic_config": true,
+    "no_gui": true,
     "form_fields": [
       {
         "type": "url",
-        "label": "OSM data file",
-        "hint": "See geofabrik.de for downloads; this is a *.osm.pbf file.",
-        "default": "https://download.geofabrik.de/north-america/us-latest.osm.pbf",
-        "required": true,
-        "env_variable": "PBF_URL"
+        "label": "URL to OSM data file",
+        "hint": "See geofabrik.de for downloads; this is a *.osm.pbf file to download.",
+        "default": "https://download.geofabrik.de/north-america/us/maryland-latest.osm.pbf",
+        "required": false,
+        "env_variable": "PBF_PATH"
+      }, {
+        "type": "string",
+        "label": "Local path to OSM data file",
+        "hint": "See geofabrik.de for downloads; this is a *.osm.pbf file and needs to be downloaded or created locally before running.",
+        "default": "${APP_DATA_DIR}/data/nominatim/osm-custom.osm.pbf",
+        "required": false,
+        "env_variable": "PBF_PATH"
       }, {
         "type": "url",
         "label": "Nominatim update file",
