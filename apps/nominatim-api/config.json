@@ -25,13 +25,6 @@
         "required": false,
         "env_variable": "PBF_URL"
       }, {
-        "type": "text",
-        "label": "Local path to OSM data file",
-        "hint": "See geofabrik.de for downloads; this is a *.osm.pbf file and needs to be downloaded or created locally before running.",
-        "default": "${APP_DATA_DIR}/data/nominatim/osm-custom.osm.pbf",
-        "required": false,
-        "env_variable": "PBF_PATH"
-      }, {
         "type": "url",
         "label": "Nominatim update file",
         "hint": "See geofabrik.de",
