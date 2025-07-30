@@ -22,7 +22,7 @@
         "label": "URL to OSM data file",
         "hint": "See geofabrik.de for downloads; this is a *.osm.pbf file to download.",
         "default": "https://download.geofabrik.de/north-america/us/maryland-latest.osm.pbf",
-        "required": false,
+        "required": true,
         "env_variable": "PBF_URL"
       }, {
         "type": "url",

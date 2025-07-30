@@ -4,7 +4,7 @@
       "name": "nominatim",
       "image": "mediagis/nominatim:5.1",
       "environment": {
-        "PBF_PATH": "${PBF_PATH}",
+        "PBF_URL": "${PBF_URL}",
         "REPLICATION_URL": "${REPLICATION_URL}",
         "NOMINATIM_PASSWORD_FILE": "/run/secrets/nominatim_key",
         "UPDATE_MODE": "catch-up",
