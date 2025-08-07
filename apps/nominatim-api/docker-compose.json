@@ -16,7 +16,7 @@
       "internalPort": 8080,
       "volumes": [
         {
-          "hostPath": "${APP_DATA_DIR}/nominatim-db/",
+          "hostPath": "${APP_DATA_DIR}/data",
           "containerPath": "/var/lib/postgresql/16/main",
           "readOnly": false,
           "shared": false,
