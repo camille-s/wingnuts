@@ -16,21 +16,14 @@
       "internalPort": 8080,
       "volumes": [
         {
-          "hostPath": "nominatim-db",
+          "hostPath": "${APP_DATA_DIR}/nominatim-db/",
           "containerPath": "/var/lib/postgresql/16/main",
           "readOnly": false,
           "shared": false,
           "private": false
         }
       ],
-      "shmSize": "128mb",
-      "addPorts": [{
-        "containerPort": 8080,
-        "hostPort": 18080,
-        "tcp": true,
-        "udp": false,
-        "interface": "127.0.0.1"
-      }]
+      "shmSize": "128mb"
     }
   ]
 }

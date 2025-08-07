@@ -18,7 +18,7 @@ services:
       USER_GID: 1000
       WARMUP_ON_STARTUP: true
     volumes:
-      - nominatim-db:/var/lib/postgresql/16/main
+      - ${APP_DATA_DIR}/nominatim-db/:/var/lib/postgresql/16/main
     shm_size: 128mb
     networks:
       - nominatim
@@ -29,6 +29,3 @@ secrets:
 
 networks:
   nominatim:
-
-volumes:
-  nominatim-db:
