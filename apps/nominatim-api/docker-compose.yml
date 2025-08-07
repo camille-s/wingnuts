@@ -1,6 +1,6 @@
 services:
   server:
-    container_name: nominatim
+    container_name: nominatim-api
     image: mediagis/nominatim:5.1
     secrets:
       - nominatim_key
@@ -18,7 +18,7 @@ services:
       USER_GID: 1000
       WARMUP_ON_STARTUP: true
     volumes:
-      - ${APP_DATA_DIR}/data/nominatim-db/:/var/lib/postgresql/16/main
+      - nominatim-db:/var/lib/postgresql/16/main
     shm_size: 128mb
     networks:
       - nominatim
@@ -29,3 +29,6 @@ secrets:
 
 networks:
   nominatim:
+
+volumes:
+  nominatim-db:
