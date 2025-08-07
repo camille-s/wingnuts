@@ -1,7 +1,7 @@
 {
   "services": [
     {
-      "name": "nominatim",
+      "name": "nominatim-api",
       "image": "mediagis/nominatim:5.1",
       "environment": {
         "PBF_URL": "${PBF_URL}",
@@ -16,14 +16,21 @@
       "internalPort": 8080,
       "volumes": [
         {
-          "hostPath": "${APP_DATA_DIR}/data/nominatim-db/",
+          "hostPath": "nominatim-db",
           "containerPath": "/var/lib/postgresql/16/main",
           "readOnly": false,
           "shared": false,
           "private": false
         }
       ],
-      "shmSize": "128mb"
+      "shmSize": "128mb",
+      "addPorts": [{
+        "containerPort": 8080,
+        "hostPort": 18080,
+        "tcp": true,
+        "udp": false,
+        "interface": "127.0.0.1"
+      }]
     }
   ]
 }
