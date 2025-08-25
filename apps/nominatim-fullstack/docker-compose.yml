@@ -15,12 +15,15 @@ services:
       NOMINATIM_PASSWORD_FILE: /run/secrets/nominatim_key
       UPDATE_MODE: catch-up
       IMPORT_STYLE: full
-      USER_UID: 1000
-      USER_GID: 1000
+      USER_UID: 1001
+      USER_GID: 1001
       WARMUP_ON_STARTUP: true
     volumes:
       - ${APP_DATA_DIR}/data/nominatim/:/var/lib/postgresql/16/main
     shm_size: 128mb
+    healthcheck:
+      test: 'curl -f http://127.0.0.1:${SERVER_PORT}/status || exit 1'
+      interval: 300s
     networks:
       - nominatim
 

@@ -10,11 +10,17 @@
         "NOMINATIM_PASSWORD_FILE": "/run/secrets/nominatim_key",
         "UPDATE_MODE": "catch-up",
         "IMPORT_STYLE": "full",
-        "USER_UID": 1000,
-        "USER_GID": 1000,
+        "USER_UID": 1001,
+        "USER_GID": 1001,
         "WARMUP_ON_STARTUP": 1
       },
       "internalPort": 8080,
+      "addPorts": [
+        {
+          "hostPort": 8123,
+          "containerPort": 8080
+        }
+      ],
       "volumes": [
         {
           "hostPath": "${APP_DATA_DIR}/data/nominatim/",
@@ -24,6 +30,10 @@
           "private": false
         }
       ],
+      "healthCheck": {
+        "test": "curl -f http://127.0.0.1:${SERVER_PORT}/status || exit 1",
+        "interval": "300s"
+      },
       "shmSize": "128mb"
     },
     {
