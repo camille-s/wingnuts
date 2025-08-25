@@ -12,7 +12,7 @@
         "IMPORT_STYLE": "full",
         "USER_UID": 1001,
         "USER_GID": 1001,
-        "WARMUP_ON_STARTUP": true
+        "WARMUP_ON_STARTUP": 1
       },
       "internalPort": 8080,
       "addPorts": [
