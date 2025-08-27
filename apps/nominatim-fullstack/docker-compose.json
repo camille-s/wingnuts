@@ -38,7 +38,7 @@
     },
     {
       "name": "nominatim-ui",
-      "image": "ghcr.io/camille-s/nominatim-ui:0.1.0",
+      "image": "ghcr.io/camille-s/nominatim-ui:0.1.1",
       "internalPort": 80,
       "isMain": true,
       "dependsOn": {
