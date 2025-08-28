@@ -22,14 +22,14 @@ services:
       - ${APP_DATA_DIR}/data/nominatim/:/var/lib/postgresql/16/main
     shm_size: 128mb
     healthcheck:
-      test: 'curl -f http://127.0.0.1:${SERVER_PORT}/status || exit 1'
+      test: 'curl -f http://127.0.0.1:8080/status || exit 1'
       interval: 300s
     networks:
       - nominatim
 
   ui:
     container_name: nominatim-ui
-    image: ghcr.io/camille-s/nominatim-ui:0.1.0
+    image: ghcr.io/camille-s/nominatim-ui:latest
     depends_on:
       - nominatim-api
     restart: unless-stopped
