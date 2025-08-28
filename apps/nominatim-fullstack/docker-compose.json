@@ -31,14 +31,14 @@
         }
       ],
       "healthCheck": {
-        "test": "curl -f http://127.0.0.1:${SERVER_PORT}/status || exit 1",
+        "test": "curl -f http://127.0.0.1:8080/status || exit 1",
         "interval": "300s"
       },
       "shmSize": "128mb"
     },
     {
       "name": "nominatim-ui",
-      "image": "ghcr.io/camille-s/nominatim-ui:0.1.1",
+      "image": "ghcr.io/camille-s/nominatim-ui:latest",
       "internalPort": 80,
       "isMain": true,
       "dependsOn": {
