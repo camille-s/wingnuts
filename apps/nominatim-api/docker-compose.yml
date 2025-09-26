@@ -1,0 +1,31 @@
+services:
+  server:
+    container_name: nominatim-api
+    image: mediagis/nominatim:5.1
+    secrets:
+      - nominatim_key
+    restart: unless-stopped
+    ports:
+      - ${APP_PORT}:8080
+    environment:
+      PBF_URL: ${PBF_URL}
+      # PBF_PATH: ${PBF_PATH}
+      REPLICATION_URL: ${REPLICATION_URL}
+      NOMINATIM_PASSWORD_FILE: /run/secrets/nominatim_key
+      UPDATE_MODE: catch-up
+      IMPORT_STYLE: full
+      USER_UID: 1000
+      USER_GID: 1000
+      WARMUP_ON_STARTUP: true
+    volumes:
+      - ${APP_DATA_DIR}/nominatim-db/:/var/lib/postgresql/16/main
+    shm_size: 128mb
+    networks:
+      - nominatim
+
+secrets:
+  nominatim_key:
+    file: ./keys/nominatim_key.txt
+
+networks:
+  nominatim:

@@ -1,0 +1,30 @@
+{
+  "services": [
+    {
+      "name": "nominatim-api",
+      "image": "mediagis/nominatim:5.1",
+      "environment": {
+        "PBF_URL": "${PBF_URL}",
+        "REPLICATION_URL": "${REPLICATION_URL}",
+        "NOMINATIM_PASSWORD_FILE": "/run/secrets/nominatim_key",
+        "UPDATE_MODE": "catch-up",
+        "IMPORT_STYLE": "full",
+        "USER_UID": 1000,
+        "USER_GID": 1000,
+        "WARMUP_ON_STARTUP": 1
+      },
+      "internalPort": 8080,
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/nominatim",
+          "containerPath": "/var/lib/postgresql/16/main",
+          "readOnly": false,
+          "shared": false,
+          "private": false
+        }
+      ],
+      "shmSize": "128mb",
+      "isMain": true
+    }
+  ]
+}

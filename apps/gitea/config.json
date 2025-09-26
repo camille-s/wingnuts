@@ -1,0 +1,19 @@
+{
+  "name": "Gitea",
+  "id": "gitea",
+  "available": true,
+  "short_desc": "Git with a cup of tea! Painless self-hosted all-in-one software development service, including Git hosting, code review, team collaboration, package registry and CI/CD",
+  "author": "traefik",
+  "port": 8999,
+  "categories": ["utilities"],
+  "description": "The goal of this project is to make the easiest, fastest, and most painless way of setting up a self-hosted Git service.",
+  "tipi_version": 2,
+  "version": "v1.24.2",
+  "source": "https://github.com/go-gitea/gitea",
+  "exposable": true,
+  "supported_architectures": ["arm64", "amd64"],
+  "created_at": 1745082405284,
+  "updated_at": 1745674974072,
+  "dynamic_config": true,
+  "form_fields": []
+}

@@ -1,0 +1,24 @@
+services:
+  gancio:
+    restart: unless-stopped
+    image: gancio:v2.0.0-alpha.1
+    container_name: gancio
+    environment:
+      - USER_GID=1001
+      - USER_UID=1001
+      - PATH=$PATH:/home/node/.yarn/bin
+      - GANCIO_DATA=/home/node/data
+      - NODE_ENV=production
+      - GANCIO_DB_DIALECT=sqlite
+      - GANCIO_DB_STORAGE=${APP_DATA_DIR}/gancio.sqlite
+    networks:
+      - gancio
+    volumes:
+      - ${APP_DATA_DIR}/data:/home/node/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - ${APP_PORT}:13120
+
+networks:
+  gancio:

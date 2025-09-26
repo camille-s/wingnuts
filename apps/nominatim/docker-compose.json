@@ -1,0 +1,53 @@
+{
+    "services": [
+        {
+            "name": "nominatim",
+            "image": "mediagis/nominatim:5.1",
+            "environment": {
+                "PBF_URL": "${PBF_URL}",
+                "REPLICATION_URL": "${REPLICATION_URL}",
+                "NOMINATIM_PASSWORD_FILE": "/run/secrets/nominatim_key",
+                "UPDATE_MODE": "catch-up",
+                "IMPORT_STYLE": "full",
+                "USER_UID": 1000,
+                "USER_GID": 1000
+            },
+            "internalPort": 8080,
+            "volumes": [
+                {
+                    "hostPath": "${APP_DATA_DIR}/data/nominatim-db/",
+                    "containerPath": "/var/lib/postgresql/16/main",
+                    "readOnly": false,
+                    "shared": false,
+                    "private": false
+                }
+            ],
+            "shmSize": "1gb",
+            "addPorts": [
+                {
+                    "containerPort": 8080,
+                    "hostPort": 8080,
+                    "tcp": true
+                }
+            ]
+        },
+        {
+            "name": "nominatim-ui",
+            "image": "ghcr.io/camille-s/nominatim-ui:0.1.0",
+            "internalPort": 80,
+            "dependsOn": {
+                "nominatim": {
+                    "condition": "service_started"
+                }
+            },
+            "isMain": true,
+            "addPorts": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 8089,
+                    "tcp": true
+                }
+            ]
+        }
+    ]
+}
