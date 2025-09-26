@@ -1,0 +1,35 @@
+{
+    "name": "Nominatim",
+    "id": "nominatim",
+    "available": true,
+    "short_desc": "Locally-hosted geocoding server with a simple UI",
+    "author": "",
+    "port": 8089,
+    "categories": ["data"],
+    "description": "Nominatim uses OpenStreetMap data to find locations on Earth by name and address (geocoding). It can also do the reverse, find an address for any location on the planet. This app combines the Nominatim server with a debugging UI.",
+    "tipi_version": 1,
+    "version": "v5.1",
+    "source": "https://github.com/osm-search/nominatim-ui",
+    "exposable": true,
+    "supported_architectures": ["arm64", "amd64"],
+    "created_at": 1753580424475,
+    "updated_at": 1753580424475,
+    "dynamic_config": true,
+    "form_fields": [
+      {
+        "type": "url",
+        "label": "OSM data file",
+        "hint": "See geofabrik.de for downloads; this is a *.osm.pbf file.",
+        "default": "https://download.geofabrik.de/north-america/us/maryland-latest.osm.pbf",
+        "required": true,
+        "env_variable": "PBF_URL"
+      }, {
+        "type": "url",
+        "label": "Nominatim update file",
+        "hint": "See geofabrik.de",
+        "default": "https://download.geofabrik.de/north-america/us-updates/",
+        "required": true,
+        "env_variable": "REPLICATION_URL"
+      }
+    ]
+}

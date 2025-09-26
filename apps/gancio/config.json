@@ -1,0 +1,25 @@
+{
+  "name": "Gancio",
+  "id": "gancio",
+  "available": true,
+  "short_desc": "A shared agenda for local communities",
+  "author": "underscore hacklab",
+  "port": 13120,
+  "categories": [
+    "utilities",
+    "social"
+  ],
+  "description": "Federated, community-focused events platform. Currently running a self-built arm64 image of the alpha version.",
+  "tipi_version": 1,
+  "version": "v2.0.0-alpha.1",
+  "source": "https://framagit.org/les/gancio",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1756218715338,
+  "updated_at": 1756218715338,
+  "dynamic_config": true,
+  "form_fields": []
+}

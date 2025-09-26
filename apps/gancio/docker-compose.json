@@ -1,0 +1,49 @@
+{
+  "services": [
+    {
+      "name": "gancio",
+      "image": "gancio:v2.0.0-alpha.1",
+      "environment": {
+        "USER_GID": "1001",
+        "USER_UID": "1001",
+        "PATH": "$PATH:/home/node/.yarn/bin",
+        "GANCIO_DATA": "/home/node/data",
+        "NODE_ENV": "production",
+        "GANCIO_DB_DIALECT": "sqlite",
+        "GANCIO_DB_STORAGE": "${APP_DATA_DIR}/gancio.sqlite"
+      },
+      "internalPort": 13120,
+      "addPorts": [
+        {
+            "containerPort": 13120,
+            "hostPort": 13120,
+            "tcp": true,
+            "udp": false
+        }
+      ],
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data",
+          "containerPath": "/home/node/data",
+          "readOnly": false,
+          "shared": false,
+          "private": false
+        },
+        {
+          "hostPath": "/etc/timezone",
+          "containerPath": "/etc/timezone",
+          "readOnly": true,
+          "shared": false,
+          "private": false
+        },
+        {
+          "hostPath": "/etc/localtime",
+          "containerPath": "/etc/localtime",
+          "readOnly": true,
+          "shared": false,
+          "private": false
+        }
+      ]
+    }
+  ]
+}
