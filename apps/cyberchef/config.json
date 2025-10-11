@@ -1,0 +1,22 @@
+{
+  "name": "CyberChef",
+  "id": "cyberchef",
+  "available": true,
+  "short_desc": "The cyber Swiss Army knife",
+  "author": "GCHQ",
+  "port": 8087,
+  "categories": [
+    "utilities"
+  ],
+  "description": "CyberChef is a simple, intuitive web app for carrying out all manner of 'cyber' operations within a web browser.",
+  "tipi_version": 1,
+  "version": "10.19.4",
+  "source": "https://github.com/gchq/CyberChef",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "dynamic_config": true,
+  "form_fields": []
+}
