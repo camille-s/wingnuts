@@ -10,7 +10,7 @@
     "social"
   ],
   "description": "Federated, community-focused events platform. Currently running a self-built arm64 image of the alpha version.",
-  "tipi_version": 1,
+  "tipi_version": 2,
   "version": "v2.0.0-alpha.1",
   "source": "https://framagit.org/les/gancio",
   "exposable": true,
@@ -19,7 +19,7 @@
     "amd64"
   ],
   "created_at": 1756218715338,
-  "updated_at": 1756218715338,
+  "updated_at": 1762315021912,
   "dynamic_config": true,
   "form_fields": []
 }

@@ -1,12 +1,14 @@
 {
+  "schemaVersion": 2,
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
   "services": [
     {
       "name": "gitea",
       "image": "docker.gitea.com/gitea:1.24.2",
-      "environment": {
-        "USER_UID": "1000",
-        "USER_GID": "1000"
-      },
+      "environment": [
+        { "key": "USER_UID", "value": "1000" },
+        { "key": "USER_GID", "value": "1000" }
+      ],
       "internalPort": 3000,
       "addPorts": [
         {

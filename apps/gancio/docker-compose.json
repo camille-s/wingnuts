@@ -1,17 +1,19 @@
 {
+  "schemaVersion": 2,
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
   "services": [
     {
       "name": "gancio",
       "image": "gancio:v2.0.0-alpha.1",
-      "environment": {
-        "USER_GID": "1001",
-        "USER_UID": "1001",
-        "PATH": "$PATH:/home/node/.yarn/bin",
-        "GANCIO_DATA": "/home/node/data",
-        "NODE_ENV": "production",
-        "GANCIO_DB_DIALECT": "sqlite",
-        "GANCIO_DB_STORAGE": "${APP_DATA_DIR}/gancio.sqlite"
-      },
+      "environment": [
+        { "key": "USER_GID", "value": "1001" },
+        { "key": "USER_UID", "value": "1001" },
+        { "key": "PATH", "value": "$PATH:/home/node/.yarn/bin" },
+        { "key": "GANCIO_DATA", "value": "/home/node/data" },
+        { "key": "NODE_ENV", "value": "production" },
+        { "key": "GANCIO_DB_DIALECT", "value": "sqlite" },
+        { "key": "GANCIO_DB_STORAGE", "value": "${APP_DATA_DIR}/gancio.sqlite" }
+      ],
       "internalPort": 13120,
       "addPorts": [
         {
