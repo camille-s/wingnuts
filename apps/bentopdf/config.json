@@ -1,0 +1,24 @@
+{
+  "name": "BentoPDF",
+  "id": "bentopdf",
+  "available": true,
+  "short_desc": "A privacy first PDF toolkit",
+  "author": "alam00000",
+  "port": 8582,
+  "categories": [
+    "utilities"
+  ],
+  "description": "BentoPDF is a powerful, privacy-first, client-side PDF toolkit that allows you to manipulate, edit, merge, and process PDF files directly in your browser. No server-side processing is required, ensuring your files remain secure and private.",
+  "tipi_version": 1,
+  "version": "v1.6.2",
+  "source": "https://github.com/alam00000/bentopdf",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1763177414509,
+  "updated_at": 1763177414509,
+  "dynamic_config": true,
+  "form_fields": []
+}
