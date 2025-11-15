@@ -1,17 +1,22 @@
 {
+    "schemaVersion": 2,
+    "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
     "services": [
         {
             "name": "nominatim",
             "image": "mediagis/nominatim:5.1",
-            "environment": {
-                "PBF_URL": "${PBF_URL}",
-                "REPLICATION_URL": "${REPLICATION_URL}",
-                "NOMINATIM_PASSWORD_FILE": "/run/secrets/nominatim_key",
-                "UPDATE_MODE": "catch-up",
-                "IMPORT_STYLE": "full",
-                "USER_UID": 1000,
-                "USER_GID": 1000
-            },
+            "environment": [
+                { "key": "PBF_URL", "value": "${PBF_URL}" },
+                { "key": "REPLICATION_URL", "value": "${REPLICATION_URL}" },
+                {
+                    "key": "NOMINATIM_PASSWORD_FILE",
+                    "value": "/run/secrets/nominatim_key"
+                },
+                { "key": "UPDATE_MODE", "value": "catch-up" },
+                { "key": "IMPORT_STYLE", "value": "full" },
+                { "key": "USER_UID", "value": "1000" },
+                { "key": "USER_GID", "value": "1000" }
+            ],
             "internalPort": 8080,
             "volumes": [
                 {
