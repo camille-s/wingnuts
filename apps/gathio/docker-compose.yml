@@ -19,7 +19,7 @@ services:
     ports:
       - ${APP_PORT}:3000
     depends_on:
-      - mongo
+      - gathio-db
   mongo:
     container_name: gathio-db
     image: mongo:8.2.1
