@@ -1,0 +1,32 @@
+services:
+  gathio:
+    image: ghcr.io/lowercasename/gathio:1.6.0
+    container_name: gathio
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: unless-stopped
+    networks:
+      - gathio
+    volumes:
+      # The path to Gathio's config folder - change to match your system
+      - ${APP_DATA_DIR}/config:/app/config
+      # The path to Gathio's static, public pages including instance description
+      # and privacy policy - change to match your system
+      - ${APP_DATA_DIR}/static:/app/static
+      # The path to Gathio's user-uploaded event images folder - change to match your system
+      - ${APP_DATA_DIR}/images:/app/public/events
+    ports:
+      - ${APP_PORT}:3000
+    depends_on:
+      - mongo
+  mongo:
+    container_name: gathio-db
+    image: mongo:8.2.1
+    volumes:
+      - ${APP_DATA_DIR}:/data/db
+    networks:
+      - gathio
+
+networks:
+  gathio:

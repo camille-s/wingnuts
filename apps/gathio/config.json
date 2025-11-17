@@ -1,0 +1,24 @@
+{
+  "name": "Gathio",
+  "id": "gathio",
+  "available": true,
+  "short_desc": "A simple, federated, privacy-first event hosting platform.",
+  "author": "GCHQ",
+  "port": 8099,
+  "categories": [
+    "utilities", "social"
+  ],
+  "description": "A simple, federated, privacy-first event hosting platform.",
+  "tipi_version": 1,
+  "version": "1.6.0",
+  "source": "https://github.com/lowercasename/gathio",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1763323088306,
+  "updated_at": 1763323088306,
+  "dynamic_config": true,
+  "form_fields": []
+}

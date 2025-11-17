@@ -1,0 +1,58 @@
+{
+    "schemaVersion": 2,
+    "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
+    "services": [
+        {
+            "name": "gathio",
+            "image": "ghcr.io/lowercasename/gathio:1.6.0",
+            "environment": [
+                {
+                    "key": "USER_UID",
+                    "value": "1000"
+                },
+                {
+                    "key": "USER_GID",
+                    "value": "1000"
+                }
+            ],
+            "internalPort": 3000,
+            "volumes": [
+                {
+                    "hostPath": "${APP_DATA_DIR}/config",
+                    "containerPath": "/app/config",
+                    "readOnly": false,
+                    "shared": false,
+                    "private": false
+                },
+                {
+                    "hostPath": "${APP_DATA_DIR}/static",
+                    "containerPath": "/app/static",
+                    "readOnly": false,
+                    "shared": false,
+                    "private": false
+                },
+                {
+                    "hostPath": "${APP_DATA_DIR}/images",
+                    "containerPath": "/app/public/events",
+                    "readOnly": false,
+                    "shared": false,
+                    "private": false
+                }
+            ],
+            "dependsOn": ["mongo"]
+        },
+        {
+            "name": "gathio-db",
+            "image": "mongo:8.2.1",
+            "volumes": [
+                {
+                    "hostPath": "${APP_DATA_DIR}",
+                    "containerPath": "/data/db",
+                    "readOnly": false,
+                    "shared": false,
+                    "private": false
+                }
+            ]
+        }
+    ]
+}
