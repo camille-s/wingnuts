@@ -9,7 +9,7 @@
     "utilities", "social"
   ],
   "description": "A simple, federated, privacy-first event hosting platform.",
-  "tipi_version": 2,
+  "tipi_version": 3,
   "version": "1.6.0",
   "source": "https://github.com/lowercasename/gathio",
   "exposable": true,

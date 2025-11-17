@@ -39,7 +39,8 @@
                     "private": false
                 }
             ],
-            "dependsOn": ["gathio-db"]
+            "dependsOn": ["gathio-db"],
+            "isMain": true
         },
         {
             "name": "gathio-db",
