@@ -39,7 +39,7 @@
                     "private": false
                 }
             ],
-            "dependsOn": ["mongo"]
+            "dependsOn": ["gathio-db"]
         },
         {
             "name": "gathio-db",
