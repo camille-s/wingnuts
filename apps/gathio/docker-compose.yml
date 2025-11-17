@@ -24,7 +24,7 @@ services:
     container_name: gathio-db
     image: mongo:8.2.1
     volumes:
-      - ${APP_DATA_DIR}:/data/db
+      - ${APP_DATA_DIR}/db:/data/db
     networks:
       - gathio
 
