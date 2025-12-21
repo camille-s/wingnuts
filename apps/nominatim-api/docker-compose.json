@@ -4,7 +4,7 @@
     "services": [
         {
             "name": "nominatim-api",
-            "image": "mediagis/nominatim:5.1",
+            "image": "mediagis/nominatim:5.2",
             "environment": [
                 { "key": "PBF_URL", "value": "${PBF_URL}" },
                 { "key": "REPLICATION_URL", "value": "${REPLICATION_URL}" },
