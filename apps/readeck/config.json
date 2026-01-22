@@ -9,7 +9,7 @@
     "utilities"
   ],
   "description": "Readeck is a simple web application that lets you save the precious readable content of web pages you like and want to keep forever. See it as a bookmark manager and a read later tool.",
-  "tipi_version": 1,
+  "tipi_version": 2,
   "version": "0.21.6",
   "source": "https://codeberg.org/readeck/readeck",
   "exposable": true,
