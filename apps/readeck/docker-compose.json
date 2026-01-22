@@ -1,35 +1,43 @@
 {
-  "schemaVersion": 2,
-  "services": [
-    {
-      "name": "readeck",
-      "image": "codeberg.org/readeck/readeck:0.21.6",
-      "environment": [
+    "schemaVersion": 2,
+    "services": [
         {
-          "key": "READECK_LOG_LEVEL",
-          "value": "info"
-        },
-        {
-          "key": "READECK_LOG_FORMAT",
-          "value": "text"
+            "name": "readeck",
+            "image": "codeberg.org/readeck/readeck:0.21.6",
+            "environment": [
+                {
+                    "key": "READECK_LOG_LEVEL",
+                    "value": "info"
+                },
+                {
+                    "key": "READECK_SERVER_HOST",
+                    "value": "0.0.0.0"
+                },
+                {
+                    "key": "READECK_SERVER_PORT",
+                    "value": 8000
+                },
+                {
+                    "key": "READECK_LOG_FORMAT",
+                    "value": "text"
+                }
+            ],
+            "internalPort": 8000,
+            "volumes": [
+                {
+                    "hostPath": "${APP_DATA_DIR}/data",
+                    "containerPath": "/readeck",
+                    "readOnly": false,
+                    "shared": false,
+                    "private": false
+                }
+            ],
+            "healthCheck": {
+                "test": "CMD /bin/readeck healthcheck -config config.toml",
+                "interval": "30s",
+                "timeout": "2s",
+                "retries": 3
+            }
         }
-      ],
-      "internalPort": 8000,
-      "volumes": [
-        {
-          "hostPath": "${APP_DATA_DIR}/data",
-          "containerPath": "/readeck",
-          "readOnly": false,
-          "shared": false,
-          "private": false
-        }
-      ],
-      "healthCheck": {
-        "test": "CMD /bin/readeck healthcheck -config config.toml",
-        "interval": "30s",
-        "timeout": "2s",
-        "retries": 3
-      }
-    }
-  ]
+    ]
 }
