@@ -1,0 +1,24 @@
+{
+  "name": "Readeck",
+  "id": "readeck",
+  "available": true,
+  "short_desc": "Save the story, cut the clutter",
+  "author": "readeck",
+  "port": 8043,
+  "categories": [
+    "utilities"
+  ],
+  "description": "Readeck is a simple web application that lets you save the precious readable content of web pages you like and want to keep forever. See it as a bookmark manager and a read later tool.",
+  "tipi_version": 2,
+  "version": "0.21.6",
+  "source": "https://codeberg.org/readeck/readeck",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1769039608510,
+  "updated_at": 1769039608510,
+  "dynamic_config": true,
+  "form_fields": []
+}
