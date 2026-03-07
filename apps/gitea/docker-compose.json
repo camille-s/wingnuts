@@ -4,7 +4,7 @@
   "services": [
     {
       "name": "gitea",
-      "image": "docker.gitea.com/gitea:1.24.2",
+      "image": "docker.gitea.com/gitea:1.25.4",
       "environment": [
         { "key": "USER_UID", "value": "1000" },
         { "key": "USER_GID", "value": "1000" }
