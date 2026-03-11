@@ -7,7 +7,7 @@
   "port": 8123,
   "categories": ["data"],
   "description": "Nominatim uses OpenStreetMap data to find locations on Earth by name and address (geocoding). It can also do the reverse, find an address for any location on the planet. This app _does not_ include a debugging UI.",
-  "tipi_version": 5,
+  "tipi_version": 6,
   "version": "v5.2",
   "source": "https://github.com/mediagis/nominatim-docker",
   "exposable": true,
@@ -31,6 +31,20 @@
       "default": "https://download.geofabrik.de/north-america/us-updates/",
       "required": true,
       "env_variable": "REPLICATION_URL"
+    },
+    {
+      "type": "text",
+      "label": "User ID code",
+      "default": "1000",
+      "required": true,
+      "env_variable": "USER_UID"
+    },
+    {
+      "type": "text",
+      "label": "Group ID code",
+      "default": "1000",
+      "required": true,
+      "env_variable": "USER_GID"
     }
   ]
 }
