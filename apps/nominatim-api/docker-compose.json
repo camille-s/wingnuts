@@ -1,34 +1,38 @@
 {
-    "schemaVersion": 2,
-    "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
-    "services": [
+  "schemaVersion": 2,
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
+  "services": [
+    {
+      "name": "nominatim-api",
+      "image": "mediagis/nominatim:5.2",
+      "environment": [
+        { "key": "PBF_URL", "value": "${PBF_URL}" },
+        { "key": "REPLICATION_URL", "value": "${REPLICATION_URL}" },
         {
-            "name": "nominatim-api",
-            "image": "mediagis/nominatim:5.2",
-            "environment": [
-                { "key": "PBF_URL", "value": "${PBF_URL}" },
-                { "key": "REPLICATION_URL", "value": "${REPLICATION_URL}" },
-                {
-                    "key": "NOMINATIM_PASSWORD_FILE",
-                    "value": "/run/secrets/nominatim_key"
-                },
-                { "key": "UPDATE_MODE", "value": "catch-up" },
-                { "key": "IMPORT_STYLE", "value": "full" },
-                { "key": "USER_UID", "value": "1000" },
-                { "key": "USER_GID", "value": "1000" }
-            ],
-            "internalPort": 8080,
-            "volumes": [
-                {
-                    "hostPath": "${APP_DATA_DIR}/data/nominatim",
-                    "containerPath": "/var/lib/postgresql/16/main",
-                    "readOnly": false,
-                    "shared": false,
-                    "private": false
-                }
-            ],
-            "shmSize": "128mb",
-            "isMain": true
+          "key": "NOMINATIM_PASSWORD_FILE",
+          "value": "/run/secrets/nominatim_key"
+        },
+        { "key": "UPDATE_MODE", "value": "${UPDATE_MODE}" },
+        { "key": "IMPORT_STYLE", "value": "${IMPORT_STYLE}" },
+        { "key": "USER_UID", "value": "${USER_UID}" },
+        { "key": "USER_GID", "value": "${USER_GID}" },
+        {
+          "key": "IMPORT_TIGER_ADDRESSES",
+          "value": "${IMPORT_TIGER_ADDRESSES}"
         }
-    ]
+      ],
+      "internalPort": 8080,
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/nominatim",
+          "containerPath": "/var/lib/postgresql/16/main",
+          "readOnly": false,
+          "shared": false,
+          "private": false
+        }
+      ],
+      "shmSize": "128mb",
+      "isMain": true
+    }
+  ]
 }
