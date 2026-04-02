@@ -7,13 +7,13 @@
   "port": 8123,
   "categories": ["data"],
   "description": "Nominatim uses OpenStreetMap data to find locations on Earth by name and address (geocoding). It can also do the reverse, find an address for any location on the planet. This app _does not_ include a debugging UI.",
-  "tipi_version": 5,
+  "tipi_version": 7,
   "version": "v5.2",
   "source": "https://github.com/mediagis/nominatim-docker",
   "exposable": true,
   "supported_architectures": ["arm64", "amd64"],
   "created_at": 1753580424475,
-  "updated_at": 1772912702369,
+  "updated_at": 1773350774906,
   "dynamic_config": true,
   "form_fields": [
     {
@@ -31,6 +31,41 @@
       "default": "https://download.geofabrik.de/north-america/us-updates/",
       "required": true,
       "env_variable": "REPLICATION_URL"
+    },
+    {
+      "type": "text",
+      "label": "User ID code",
+      "default": "1000",
+      "required": true,
+      "env_variable": "USER_UID"
+    },
+    {
+      "type": "text",
+      "label": "Group ID code",
+      "default": "1000",
+      "required": true,
+      "env_variable": "USER_GID"
+    },
+    {
+      "type": "text",
+      "label": "Update mode",
+      "default": "catch-up",
+      "required": true,
+      "env_variable": "UPDATE_MODE"
+    },
+    {
+      "type": "text",
+      "label": "Import style",
+      "default": "full",
+      "required": true,
+      "env_variable": "IMPORT_STYLE"
+    },
+    {
+      "type": "boolean",
+      "label": "Import Tiger addresses",
+      "default": false,
+      "required": false,
+      "env_variable": "IMPORT_TIGER_ADDRESSES"
     }
   ]
 }
