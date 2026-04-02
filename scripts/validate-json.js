@@ -70,4 +70,3 @@ validateJson().catch((error) => {
   console.error("Validation script error:", error);
   process.exit(1);
 });
-
