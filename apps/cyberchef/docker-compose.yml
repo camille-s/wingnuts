@@ -1,0 +1,13 @@
+x-runtipi:
+  schema_version: 2
+
+services:
+  cyberchef:
+    image: ghcr.io/gchq/cyberchef:v10.22.1
+    container_name: cyberchef
+    x-runtipi:
+      is_main: true
+      internal_port: 80
+    restart: unless-stopped
+    ports:
+      - ${APP_PORT}:80

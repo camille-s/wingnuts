@@ -9,7 +9,7 @@
     "utilities"
   ],
   "description": "CyberChef is a simple, intuitive web app for carrying out all manner of 'cyber' operations within a web browser.",
-  "tipi_version": 3,
+  "tipi_version": 4,
   "version": "10.22.1",
   "source": "https://github.com/gchq/CyberChef",
   "exposable": true,
@@ -18,7 +18,7 @@
     "amd64"
   ],
   "created_at": 1756218715338,
-  "updated_at": 1772912702369,
+  "updated_at": 1775180826005,
   "dynamic_config": true,
   "form_fields": []
 }
