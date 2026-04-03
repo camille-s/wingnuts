@@ -1,7 +1,13 @@
+x-runtipi:
+  schema_version: 2
+
 services:
   server:
     container_name: nominatim-api
-    image: mediagis/nominatim:5.1
+    image: mediagis/nominatim:5.2
+    x-runtipi:
+      is_main: true
+      internal_port: 8080
     secrets:
       - nominatim_key
     restart: unless-stopped
@@ -12,16 +18,19 @@ services:
       # PBF_PATH: ${PBF_PATH}
       REPLICATION_URL: ${REPLICATION_URL}
       NOMINATIM_PASSWORD_FILE: /run/secrets/nominatim_key
-      UPDATE_MODE: catch-up
-      IMPORT_STYLE: full
-      USER_UID: 1000
-      USER_GID: 1000
+      UPDATE_MODE: ${UPDATE_MODE}
+      IMPORT_STYLE: ${IMPORT_STYLE}
+      IMPORT_TIGER_ADDRESSES: ${IMPORT_TIGER_ADDRESSES}
       WARMUP_ON_STARTUP: true
+    user: "${USER_UID}:${USER_GID}"
     volumes:
-      - ${APP_DATA_DIR}/nominatim-db/:/var/lib/postgresql/16/main
+      - nominatim-db/:/var/lib/postgresql/16/main
     shm_size: 128mb
     networks:
       - nominatim
+
+volumes:
+  nominatim-db:
 
 secrets:
   nominatim_key:
