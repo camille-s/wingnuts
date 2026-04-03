@@ -7,13 +7,13 @@
   "port": 8999,
   "categories": ["utilities"],
   "description": "The goal of this project is to make the easiest, fastest, and most painless way of setting up a self-hosted Git service.",
-  "tipi_version": 4,
-  "version": "v1.25.4",
+  "tipi_version": 5,
+  "version": "v1.25.5",
   "source": "https://github.com/go-gitea/gitea",
   "exposable": true,
   "supported_architectures": ["arm64", "amd64"],
   "created_at": 1745082405284,
-  "updated_at": 1772912702369,
+  "updated_at": 1775180826005,
   "dynamic_config": true,
   "form_fields": []
 }
