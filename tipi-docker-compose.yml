@@ -1,0 +1,12 @@
+x-runtipi:
+  schema_version: 2
+
+services:
+  app-name:
+    image: image
+    x-runtipi:
+      is_main: true
+      internal_port: 8080
+    restart: unless-stopped
+    ports:
+      - ${APP_PORT}:8080
