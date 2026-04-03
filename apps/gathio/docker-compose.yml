@@ -1,10 +1,16 @@
+x-runtipi:
+  schema_version: 2
+
 services:
   gathio:
-    image: ghcr.io/lowercasename/gathio:1.6.0
+    image: ghcr.io/lowercasename/gathio:1.6.2
     container_name: gathio
+    x-runtipi:
+      is_main: true
+      internal_port: 3000
     environment:
-      - USER_UID=1000
-      - USER_GID=1000
+      - USER_UID=${USER_UID}
+      - USER_GID=${USER_GID}
     restart: unless-stopped
     networks:
       - gathio
@@ -22,11 +28,14 @@ services:
       - gathio-db
   mongo:
     container_name: gathio-db
-    image: mongo:8.2.1
+    image: mongo:8.2.6
     volumes:
-      - ${APP_DATA_DIR}/db:/data/db
+      - gathio-db:/data/db
     networks:
       - gathio
 
 networks:
   gathio:
+
+volumes:
+  gathio-db:

@@ -15,5 +15,20 @@
   "created_at": 1745082405284,
   "updated_at": 1775180826005,
   "dynamic_config": true,
-  "form_fields": []
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "User ID code",
+      "default": "1000",
+      "required": true,
+      "env_variable": "USER_UID"
+    },
+    {
+      "type": "text",
+      "label": "Group ID code",
+      "default": "1000",
+      "required": true,
+      "env_variable": "USER_GID"
+    }
+  ]
 }
