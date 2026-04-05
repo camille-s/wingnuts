@@ -1,0 +1,4 @@
+allowBuilds:
+  bun: true
+  lefthook: false
+  unrs-resolver: false
