@@ -2,7 +2,7 @@ x-runtipi:
   schema_version: 2
 
 services:
-  server:
+  nominatim-api:
     container_name: nominatim-api
     image: mediagis/nominatim:5.2
     x-runtipi:
@@ -24,7 +24,7 @@ services:
       WARMUP_ON_STARTUP: true
     user: "${USER_UID}:${USER_GID}"
     volumes:
-      - nominatim-db/:/var/lib/postgresql/16/main
+      - nominatim-db:/var/lib/postgresql/16/main
     shm_size: 128mb
     networks:
       - nominatim
