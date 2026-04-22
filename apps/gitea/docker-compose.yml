@@ -3,7 +3,7 @@ x-runtipi:
 
 services:
   gitea:
-    image: docker.gitea.com/gitea:1.25.5
+    image: docker.gitea.com/gitea:1.26.0
     container_name: gitea
     x-runtipi:
       is_main: true
