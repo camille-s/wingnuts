@@ -9,8 +9,8 @@
     "data"
   ],
   "description": "Nominatim uses OpenStreetMap data to find locations on Earth by name and address (geocoding). It can also do the reverse, find an address for any location on the planet. This app _does not_ include a debugging UI.",
-  "tipi_version": 9,
-  "version": "v5.2",
+  "tipi_version": 10,
+  "version": "v5.3.2",
   "source": "https://github.com/mediagis/nominatim-docker",
   "exposable": true,
   "supported_architectures": [
@@ -18,7 +18,7 @@
     "amd64"
   ],
   "created_at": 1753580424475,
-  "updated_at": 1775747489000,
+  "updated_at": 1777423766000,
   "dynamic_config": true,
   "form_fields": [
     {
