@@ -3,11 +3,13 @@ name: Readme Generator
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * 1'
+    - cron: "0 0 * * *"
 
 jobs:
   generate-readme-file:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
