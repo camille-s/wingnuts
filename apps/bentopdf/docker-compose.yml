@@ -5,7 +5,7 @@ services:
   bentopdf:
     # simple mode - bentopdf/bentopdf-simple:latest
     # default mode - bentopdf/bentopdf:latest
-    image: ghcr.io/alam00000/bentopdf:v2.8.1
+    image: ghcr.io/alam00000/bentopdf:v2.8.4
     container_name: bentopdf
     x-runtipi:
       is_main: true
