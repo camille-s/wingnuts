@@ -1,12 +1,12 @@
 # Wingnuts App Store ⛺
 
-This is a custom Runtipi App Store for my local wingnut self-hosting on a bunch of Raspberry Pis and other SBCs.
+This is a custom Runtipi App Store for my local wingnut self-hosting on a bunch
+of Raspberry Pis and other SBCs.
 
 ## Apps available (<!appsCount>)
 
 | App | Name | Description |
 | :-: | ---- | ----------- |
-
 <!appsList>
 
 ## Code requirements
@@ -18,4 +18,3 @@ This is a custom Runtipi App Store for my local wingnut self-hosting on a bunch 
 ```bash
 pnpm install
 ```
-
