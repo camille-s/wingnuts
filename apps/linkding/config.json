@@ -1,0 +1,32 @@
+{
+	"name": "linkding",
+	"id": "linkding",
+	"available": true,
+	"short_desc": "A self-hosted bookmark manager designed to be minimal, fast, and easy to set up.",
+	"author": "sissbruecker",
+	"port": 8583,
+	"categories": ["utilities", "data"],
+	"description": "linkding is a bookmark manager that you can host yourself. It's designed be to be minimal, fast, and easy to set up using Docker. The name comes from: link which is often used as a synonym for URLs and bookmarks in common language; Ding which is German for thing;...so basically something for managing your links",
+	"tipi_version": 1,
+	"version": "1.45.0",
+	"source": "https://github.com/sissbruecker/linkding",
+	"exposable": true,
+	"supported_architectures": ["arm64", "amd64"],
+	"created_at": 1780281527000,
+	"updated_at": 1780281527000,
+	"dynamic_config": true,
+	"form_fields": [
+		{
+			"type": "text",
+			"label": "Username",
+			"required": true,
+			"env_variable": "LD_SUPERUSER_NAME"
+		},
+		{
+			"type": "text",
+			"label": "Password",
+			"required": true,
+			"env_variable": "LD_SUPERUSER_PASSWORD"
+		}
+	]
+}
