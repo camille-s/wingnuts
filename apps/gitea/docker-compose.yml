@@ -11,6 +11,7 @@ services:
     restart: unless-stopped
     ports:
       - ${APP_PORT}:3000
+      - "222:22"
     environment:
       USER_UID: ${USER_UID}
       USER_GID: ${USER_GID}
